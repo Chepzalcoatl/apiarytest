@@ -5,76 +5,105 @@ HOST: http://private-00236-ducktest.apiary-mock.com
 
 Este es la documentación para el proyecto X.
 
-## Questions Collection [/questions]
+## Collección Productos [/producto]
 
-### List All Questions [GET]
+### List All Productos [GET]
+
+Podras obtener todos los productos activos.
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+        {
+            "message" : "Información obtenida con exito"
+            "data" : 
+                [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "id": "1",
+                        "precio": "125",
+                        "titulo": "Producto One"
+                        "descripcion": "Este es un gran producto"
+                        "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg"
+                    },{
+                        "id": "2",
+                        "precio": "125",
+                        "titulo": "Producto Two"
+                        "descripcion": "Este es un gran producto"
+                        "urlimagen": "https://cdn.nexternal.com/korbel/images/BRUT_MAIN3.jpg"
+                    },{
+                        "id": "3",
+                        "precio": "125",
+                        "titulo": "Producto Three"
+                        "descripcion": "Este es un gran producto"
+                        "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
                     }
                 ]
-            }
-        ]
+        }
 
-### Create a New Question [POST]
+### Create a New Producto [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+Podras crear un producto mediante un objeto JSON y recibiras como respuesta el objeto creado.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "precio": "125",
+            "titulo": "Producto Four"
+            "descripcion": "Este es un gran producto"
+            "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
         }
 
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
++ Response 200 (application/json)
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "message" : "Información obtenida con exito"
+                "data" : 
                     {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
+                        "id": "4",
+                        "precio": "125",
+                        "titulo": "Producto Four"
+                        "descripcion": "Este es un gran producto"
+                        "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
                     }
-                ]
+            }
+
+### Update a Producto [PUT]
+
+Podras modificar un producto mediante un objeto JSON y recibiras como respuesta true o false verificando la operación.
+
++ Request (application/json)
+
+        {
+            "id": "4",
+            "precio": "125",
+            "titulo": "Producto Four"
+            "descripcion": "Este es un gran producto updated"
+            "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "message" : "Información actualizada con exito."
+                "data" : true
+            }
+            
+### Delete a Producto [DELETE]
+
+Podras eliminar un producto mediante un objeto JSON y recibiras como respuesta true o false verificando la operación.
+
++ Request (application/json)
+
+        {
+            "id": "4",
+            "precio": "125",
+            "titulo": "Producto Four"
+            "descripcion": "Este es un gran producto updated"
+            "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "message" : "Información obtenida con exito"
+                "data" : true
             }
