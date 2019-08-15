@@ -5,7 +5,7 @@ HOST: http://private-00236-ducktest.apiary-mock.com
 
 Este es la documentación para el proyecto X.
 
-## Collección Productos [/producto]
+## Productos [/producto]
 
 ### List All Productos [GET]
 
@@ -14,29 +14,26 @@ Podras obtener todos los productos activos.
 + Response 200 (application/json)
 
         {
-            "message" : "Información obtenida con exito"
-            "data" : 
-                [
-                    {
-                        "id": "1",
-                        "precio": "125",
-                        "titulo": "Producto One"
-                        "descripcion": "Este es un gran producto"
-                        "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg"
-                    },{
-                        "id": "2",
-                        "precio": "125",
-                        "titulo": "Producto Two"
-                        "descripcion": "Este es un gran producto"
-                        "urlimagen": "https://cdn.nexternal.com/korbel/images/BRUT_MAIN3.jpg"
-                    },{
-                        "id": "3",
-                        "precio": "125",
-                        "titulo": "Producto Three"
-                        "descripcion": "Este es un gran producto"
-                        "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
-                    }
-                ]
+            "message": "Información obtenida con exito",
+            "data": [{
+                "id": "1",
+                "precio": "125",
+                "titulo": "Producto One",
+                "descripcion": "Este es un gran producto",
+                "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg"
+            }, {
+                "id": "2",
+                "precio": "125",
+                "titulo": "Producto Two",
+                "descripcion": "Este es un gran producto",
+                "urlimagen": "https://cdn.nexternal.com/korbel/images/BRUT_MAIN3.jpg"
+            }, {
+                "id": "3",
+                "precio": "125",
+                "titulo": "Producto Three",
+                "descripcion": "Este es un gran producto",
+                "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
+            }]
         }
 
 ### Create a New Producto [POST]
@@ -47,24 +44,23 @@ Podras crear un producto mediante un objeto JSON y recibiras como respuesta el o
 
         {
             "precio": "125",
-            "titulo": "Producto Four"
-            "descripcion": "Este es un gran producto"
+            "titulo": "Producto Four",
+            "descripcion": "Este es un gran producto",
             "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
         }
 
 + Response 200 (application/json)
 
-            {
-                "message" : "Información obtenida con exito"
-                "data" : 
-                    {
-                        "id": "4",
-                        "precio": "125",
-                        "titulo": "Producto Four"
-                        "descripcion": "Este es un gran producto"
-                        "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
-                    }
+        {
+            "message": "Información obtenida con exito",
+            "data": {
+                "id": "4",
+                "precio": "125",
+                "titulo": "Producto Four",
+                "descripcion": "Este es un gran producto",
+                "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
             }
+        }
 
 ### Update a Producto [PUT]
 
@@ -75,17 +71,17 @@ Podras modificar un producto mediante un objeto JSON y recibiras como respuesta 
         {
             "id": "4",
             "precio": "125",
-            "titulo": "Producto Four"
-            "descripcion": "Este es un gran producto updated"
+            "titulo": "Producto Four",
+            "descripcion": "Este es un gran producto updated",
             "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
         }
 
 + Response 200 (application/json)
 
-            {
-                "message" : "Información actualizada con exito."
-                "data" : true
-            }
+        {
+            "message" : "Información actualizada con exito.",
+            "data" : true
+        }
             
 ### Delete a Producto [DELETE]
 
@@ -96,14 +92,106 @@ Podras eliminar un producto mediante un objeto JSON y recibiras como respuesta t
         {
             "id": "4",
             "precio": "125",
-            "titulo": "Producto Four"
-            "descripcion": "Este es un gran producto updated"
+            "titulo": "Producto Four",
+            "descripcion": "Este es un gran producto updated",
             "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
         }
 
 + Response 200 (application/json)
 
-            {
-                "message" : "Información obtenida con exito"
-                "data" : true
-            }
+        {
+            "message" : "Información obtenida con exito",
+            "data" : true
+        }
+            
+## Eventos [/evento]
+
+### List All Eventos [GET]
+
+Podras obtener todos los eventos activos.
+
++ Response 200 (application/json)
+
+        {
+            "message": "Información obtenida con exito",
+            "data": [{
+                "id": "1",
+                "titulo": "Evento One",
+                "descripcion": "Este es un gran Evento",
+                "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                "estatus": "abierto",
+                "horaLimiteEntradaXreservacion": "2015-08-05T08:40:51.620Z",
+                "limiteInvitadosXreservacion": "10",
+                "esFrecuente": true,
+                "diaSemana": "4",
+                "fecha": "",
+                "listaPromociones": [{
+                    "id": "1",
+                    "titulo": "Promocion One",
+                    "descripcion": "Este es un gran promocion",
+                    "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                    "caducidad": "2015-08-05T08:40:51.620Z",
+                    "listaRestricciones": [{
+                        "id": "1",
+                        "titulo": "Restriccion One"
+                    }, {
+                        "id": "1",
+                        "titulo": "Restriccion two"
+                    }]
+                }, { 
+                    "id": "1",
+                    "titulo": "Promocion One",
+                    "descripcion": "Este es un gran promocion",
+                    "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                    "caducidad": "2015-08-05T08:40:51.620Z",
+                    "listaRestricciones": [{
+                        "id": "1",
+                        "titulo": "Restriccion One"
+                    }, {
+                        "id": "1",
+                        "titulo": "Restriccion two"
+                    }]
+                }]
+            }, {
+                "id": "1",
+                "titulo": "Evento One",
+                "descripcion": "Este es un gran Evento",
+                "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                "estatus": "abierto",
+                "horaLimiteEntradaXreservacion": "2015-08-05T08:40:51.620Z",
+                "limiteInvitadosXreservacion": "10",
+                "esFrecuente": false,
+                "diaSemana": "",
+                "fecha": "2015-08-05T08:40:51.620Z",
+                "listaPromociones": [{
+                    "id": "1",
+                    "titulo": "Promocion One",
+                    "descripcion": "Este es un gran promocion",
+                    "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                    "caducidad": "2015-08-05T08:40:51.620Z",
+                    "listaRestricciones": [{
+                        "id": "1",
+                        "titulo": "Restriccion One"
+                    }, {
+                        "id": "2",
+                        "titulo": "Restriccion two"
+                    }]
+                }, { 
+                    "id": "2",
+                    "titulo": "Promocion two",
+                    "descripcion": "Este es un gran promocion",
+                    "urlimagen": "https://www.enterwine.es/media/catalog/product/cache/2/thumbnail/700x/17f82f742ffe127f42dca9de82fb58b1/t/a/taittinger-reserve.jpg",
+                    "caducidad": "2015-08-05T08:40:51.620Z",
+                    "listaRestricciones": [{
+                        "id": "1",
+                        "titulo": "Restriccion one"
+                    }, {
+                        "id": "3",
+                        "titulo": "Restriccion three"
+                    }, {
+                        "id": "4",
+                        "titulo": "Restriccion four"
+                    }]
+                }]
+            }]
+        }
