@@ -195,3 +195,33 @@ Podras obtener todos los eventos activos.
                 }]
             }]
         }
+
+
+
+## Reservacion [/reservacion]
+
+### Create a New Reservación [POST]
+
+Podras crear una reservacion mediante un objeto JSON y recibiras como respuesta el objeto creado.
+
++ Request (application/json)
+
+        {
+            "precio": "125",
+            "titulo": "Producto Four",
+            "descripcion": "Este es un gran producto",
+            "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "message": "Información obtenida con exito",
+            "data": {
+                "id": "4",
+                "precio": "125",
+                "titulo": "Producto Four",
+                "descripcion": "Este es un gran producto",
+                "urlimagen": "https://www.bodeboca.com/sites/default/files/bot-ghmumm-rouge.jpg"
+            }
+        }
